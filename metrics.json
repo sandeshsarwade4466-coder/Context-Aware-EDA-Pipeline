@@ -1,0 +1,53 @@
+{
+  "source_file": "upcoming-ultra-trails.csv",
+  "generated_at": "2026-10-25T21:47:12",
+  "detected_domain": "General Tabular Analytics",
+  "primary_metric": "distance_km",
+  "analyzed_numeric_columns": [
+    "distance_km",
+    "elevation_gain_m",
+    "elevation_loss_m"
+  ],
+  "analyzed_categorical_columns": [
+    "event_date_dayofweek"
+  ],
+  "excluded_id_or_noise_columns": [
+    "name",
+    "gpx_url",
+    "event_name",
+    "source_url"
+  ],
+  "raw_shape": [
+    1277,
+    13
+  ],
+  "clean_shape": [
+    1277,
+    15
+  ],
+  "quality_score": {
+    "completeness_pct": 96.3,
+    "uniqueness_pct": 100.0,
+    "source_clean_columns_pct": 69.2,
+    "overall_score": 92.0
+  },
+  "insights": [
+    "Detected Dataset Context: General Tabular Analytics.",
+    "Automatically excluded 4 ID/text-noise column(s) from statistical charts.",
+    "Strong linear relationship between 'elevation_gain_m' and 'elevation_loss_m' (r = 0.83).",
+    "Primary Metric 'distance_km': Mean = 89.53, Median = 67.61 (Skewness = 28.60).",
+    "'Friday' leads in 'distance_km' (mean: 116.28 across 185 records).",
+    "Outlier Hotspot: 'elevation_gain_m' contains 81 IQR outliers (6.3% of rows)."
+  ],
+  "cleaning_log": [
+    "Shape: (1,277 rows, 13 cols) -> (1,277 rows, 13 cols).",
+    "Parsed 'event_date' as standardized datetime.",
+    "Filled 94 NaN in 'elevation_gain_m' with median (2740.00).",
+    "Filled 104 NaN in 'elevation_loss_m' with median (2706.00).",
+    "Filled 407 NaN in 'gpx_url' with 'Unknown'.",
+    "Filled 8 NaN in 'locality' with 'Unknown'.",
+    "Reorganized columns: [DateTime -> Categorical/Text -> Numeric].",
+    "Sorted rows chronologically by 'event_date'.",
+    "[Context Engine] Extracted 'event_date_month' and 'event_date_dayofweek'."
+  ]
+}

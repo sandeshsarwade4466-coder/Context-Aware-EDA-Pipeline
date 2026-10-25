@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EDA Report - upcoming-ultra-trails</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f6f9; color: #2c3e50; margin: 0; padding: 30px; }
+        .container { max-width: 1200px; margin: auto; }
+        .header { background: #1e293b; color: white; padding: 25px; border-radius: 10px; margin-bottom: 25px; }
+        .badge { display: inline-block; background: #3b82f6; color: white; padding: 5px 12px; border-radius: 20px; font-size: 13px; margin-top: 8px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 25px; }
+        .metric-box { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); text-align: center; }
+        .metric-box h2 { margin: 0; color: #2563eb; font-size: 26px; }
+        .metric-box p { margin: 5px 0 0; color: #64748b; font-size: 13px; }
+        .card { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); margin-bottom: 25px; overflow-x: auto; }
+        .table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 13px; }
+        .table th, .table td { border: 1px solid #e2e8f0; padding: 10px; text-align: left; }
+        .table th { background: #f8fafc; color: #334155; }
+        img { max-width: 100%; height: auto; border-radius: 6px; margin-top: 10px; }
+        ul { line-height: 1.7; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Universal Context-Aware EDA Dashboard (v4.3)</h1>
+            <p>Source: <strong>upcoming-ultra-trails.csv</strong> | Cleaned CSV Copy: <strong>cleaned_upcoming-ultra-trails.csv</strong></p>
+            <span class="badge">Detected Context: General Tabular Analytics</span>
+            <span class="badge">Primary Metric: distance_km</span>
+        </div>
+        <div class="grid">
+            <div class="metric-box"><h2>92.0 / 100</h2><p>Source Quality Score</p></div>
+            <div class="metric-box"><h2>1,277 → 1,277</h2><p>Rows (Raw → Cleaned)</p></div>
+            <div class="metric-box"><h2>7</h2><p>Signal-Driven Charts Built</p></div>
+            <div class="metric-box"><h2>215</h2><p>IQR Outliers Flagged</p></div>
+        </div>
+        <div class="card">
+            <h3>💡 Context-Aware Statistical Insights</h3>
+            <ul><li>Detected Dataset Context: General Tabular Analytics.</li><li>Automatically excluded 4 ID/text-noise column(s) from statistical charts.</li><li>Strong linear relationship between 'elevation_gain_m' and 'elevation_loss_m' (r = 0.83).</li><li>Primary Metric 'distance_km': Mean = 89.53, Median = 67.61 (Skewness = 28.60).</li><li>'Friday' leads in 'distance_km' (mean: 116.28 across 185 records).</li><li>Outlier Hotspot: 'elevation_gain_m' contains 81 IQR outliers (6.3% of rows).</li></ul>
+        </div>
+        <div class="card">
+            <h3>🧹 Cleaning & Organization Audit Log</h3>
+            <ul><li>Shape: (1,277 rows, 13 cols) -> (1,277 rows, 13 cols).</li><li>Parsed 'event_date' as standardized datetime.</li><li>Filled 94 NaN in 'elevation_gain_m' with median (2740.00).</li><li>Filled 104 NaN in 'elevation_loss_m' with median (2706.00).</li><li>Filled 407 NaN in 'gpx_url' with 'Unknown'.</li><li>Filled 8 NaN in 'locality' with 'Unknown'.</li><li>Reorganized columns: [DateTime -> Categorical/Text -> Numeric].</li><li>Sorted rows chronologically by 'event_date'.</li><li>[Context Engine] Extracted 'event_date_month' and 'event_date_dayofweek'.</li></ul>
+        </div>
+        <div class="card">
+            <h3>🗂️ Organized Dataset Preview (First 10 Rows)</h3>
+            <table border="1" class="dataframe table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>event_date</th>
+      <th>name</th>
+      <th>gpx_url</th>
+      <th>event_name</th>
+      <th>country</th>
+      <th>locality</th>
+      <th>source_url</th>
+      <th>source</th>
+      <th>scraped_at</th>
+      <th>distance_km</th>
+      <th>elevation_gain_m</th>
+      <th>elevation_loss_m</th>
+      <th>schema_version</th>
+      <th>event_date_month</th>
+      <th>event_date_dayofweek</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2026-10-21</td>
+      <td>50 Mile</td>
+      <td>Unknown</td>
+      <td>Canyonlands Ultra</td>
+      <td>USA</td>
+      <td>Moab</td>
+      <td>https://itra.run/Races/RaceDetails/Canyonlands.Ultra.50.Mile/2026/116678</td>
+      <td>itra</td>
+      <td>2026-10-18T17:00:46+00:00</td>
+      <td>80.20</td>
+      <td>1591.0</td>
+      <td>159.0</td>
+      <td>1</td>
+      <td>2026-10</td>
+      <td>Wednesday</td>
+    </tr>
+    <tr>
+      <td>2026-10-22</td>
+      <td>Stage100</td>
+      <td>https://tracedetrail.fr/fr/trace/328032</td>
+      <td>YellSportFest</td>
+      <td>ARM</td>
+      <td>Yenokavan</td>
+      <td>https://itra.run/Races/RaceDetails/YellSportFest.Stage100/2026/113458</td>
+      <td>itra</td>
+      <td>2026-10-18T17:00:46+00:00</td>
+      <td>103.00</td>
+      <td>5300.0</td>
+      <td>5300.0</td>
+      <td>1</td>
+      <td>2026-10</td>
+      <td>Thursday</td>
+    </tr>
+    <tr>
+      <td>2026-10-22</td>
+      <td>Ultra-Trail®</td>
+      <td>Unknown</td>
+      <td>Virgin Forest Trail</td>
+      <td>GRC</td>
+      <td>Paranesti</td>
+      <td>https://itra.run/Races/RaceDetails/Virgin.Forest.Trail.Ultra.Trail%C2%AE/2026/125086</td>
+      <td>itra</td>
+      <td>2026-10-18T17:00:46+00:00</td>
+      <td>161.00</td>
+      <td>6890.0</td>
+      <td>6420.0</td>
+      <td>1</td>
+      <td>2026-10</td>
+      <td>Thursday</td>
+    </tr>
+    <tr>
+      <td>2026-10-23</td>
+      <td>Movila Măgura Everesting 62</td>
+      <td>https://tracedetrail.fr/fr/trace/338129</td>
+      <td>Movila Măgura Everesting Challenge</td>
+      <td>MDA</td>
+      <td>Ciolacul Nou</td>
+      <td>https://itra.run/Races/RaceDetails/Movila.M%C4%83gura.Everesting.Challenge.Movila.M%C4%83gura.Everesting.62/2026/117331</td>
+      <td>itra</td>
+      <td>2026-10-18T17:00:46+00:00</td>
+      <td>125.88</td>
+      <td>7967.0</td>
+      <td>7967.0</td>
+      <td>1</td>
+      <td>2026-10</td>
+      <td>Friday</td>
+    </tr>
+    <tr>
+      <td>2026-10-23</td>
+      <td>Movila Măgura Everesting 50</td>
+      <td>https://tracedetrail.fr/fr/trace/338128</td>
+      <td>Movila Măgura Everesting Challenge</td>
+      <td>MDA</td>
+      <td>Ciolacul Nou</td>
+      <td>https://itra.run/Races/RaceDetails/Movila.M%C4%83gura.Everesting.Challenge.Movila.M%C4%83gura.Everesting.50/2026/117330</td>
+      <td>itra</td>
+      <td>2026-10-18T17:00:46+00:00</td>
+      <td>101.51</td>
+      <td>6419.0</td>
+      <td>6419.0</td>
+      <td>1</td>
+      <td>2026-10</td>
+      <td>Friday</td>
+    </tr>
+    <tr>
+      <td>2026-10-23</td>
+      <td>Movila Măgura Everesting 38</td>
+      <td>https://tracedetrail.fr/fr/trace/338127</td>
+      <td>Movila Măgura Everesting Challenge</td>
+      <td>MDA</td>
+      <td>Ciolacul Nou</td>
+      <td>https://itra.run/Races/RaceDetails/Movila.M%C4%83gura.Everesting.Challenge.Movila.M%C4%83gura.Everesting.38/2026/117329</td>
+      <td>itra</td>
+      <td>2026-10-18T17:00:46+00:00</td>
+      <td>77.15</td>
+      <td>4871.0</td>
+      <td>4871.0</td>
+      <td>1</td>
+      <td>2026-10</td>
+      <td>Friday</td>
+    </tr>
+    <tr>
+      <td>2026-10-23</td>
+      <td>Movila Măgura Everesting 29</td>
+      <td>https://tracedetrail.fr/fr/trace/338125</td>
+      <td>Movila Măgura Everesting Challenge</td>
+      <td>MDA</td>
+      <td>Ciolacul Nou</td>
+      <td>https://itra.run/Races/RaceDetails/Movila.M%C4%83gura.Everesting.Challenge.Movila.M%C4%83gura.Everesting.29/2026/117328</td>
+      <td>itra</td>
+      <td>2026-10-18T17:00:46+00:00</td>
+      <td>58.88</td>
+      <td>3724.0</td>
+      <td>3724.0</td>
+      <td>1</td>
+      <td>2026-10</td>
+      <td>Friday</td>
+    </tr>
+    <tr>
+      <td>2026-10-23</td>
+      <td>Movila Măgura Everesting 23</td>
+      <td>https://tracedetrail.fr/fr/trace/338124</td>
+      <td>Movila Măgura Everesting Challenge</td>
+      <td>MDA</td>
+      <td>Ciolacul Nou</td>
+      <td>https://itra.run/Races/RaceDetails/Movila.M%C4%83gura.Everesting.Challenge.Movila.M%C4%83gura.Everesting.23/2026/117326</td>
+      <td>itra</td>
+      <td>2026-10-18T17:00:46+00:00</td>
+      <td>46.69</td>
+      <td>2960.0</td>
+      <td>2960.0</td>
+      <td>1</td>
+      <td>2026-10</td>
+      <td>Friday</td>
+    </tr>
+    <tr>
+      <td>2026-10-23</td>
+      <td>Movila Măgura Everesting 70</td>
+      <td>https://tracedetrail.fr/fr/trace/338131</td>
+      <td>Movila Măgura Everesting Challenge</td>
+      <td>MDA</td>
+      <td>Ciolacul Nou</td>
+      <td>https://itra.run/Races/RaceDetails/Movila.M%C4%83gura.Everesting.Challenge.Movila.M%C4%83gura.Everesting.70/2026/117332</td>
+      <td>itra</td>
+      <td>2026-10-18T17:00:46+00:00</td>
+      <td>142.12</td>
+      <td>8967.0</td>
+      <td>8967.0</td>
+      <td>1</td>
+      <td>2026-10</td>
+      <td>Friday</td>
+    </tr>
+    <tr>
+      <td>2026-10-23</td>
+      <td>70km</td>
+      <td>https://tracedetrail.fr/fr/trace/360019</td>
+      <td>MOGAN MOUNTAIN RUNNING RACE</td>
+      <td>CHN</td>
+      <td>Moganshan</td>
+      <td>https://itra.run/Races/RaceDetails/MOGAN.MOUNTAIN.RUNNING.RACE.70km/2026/124074</td>
+      <td>itra</td>
+      <td>2026-10-18T17:00:46+00:00</td>
+      <td>67.61</td>
+      <td>3629.0</td>
+      <td>3629.0</td>
+      <td>1</td>
+      <td>2026-10</td>
+      <td>Friday</td>
+    </tr>
+  </tbody>
+</table>
+        </div>
+        <div class="card">
+            <h3>📈 Summary Statistics (Genuine Numeric Metrics Only)</h3>
+            <table border="1" class="dataframe table">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>distance_km</th>
+      <td>1277.0</td>
+      <td>89.53</td>
+      <td>148.47</td>
+      <td>42.2</td>
+      <td>50.67</td>
+      <td>67.61</td>
+      <td>101.67</td>
+      <td>5000.0</td>
+    </tr>
+    <tr>
+      <th>elevation_gain_m</th>
+      <td>1277.0</td>
+      <td>3387.28</td>
+      <td>3570.55</td>
+      <td>45.0</td>
+      <td>1850.00</td>
+      <td>2740.00</td>
+      <td>3963.00</td>
+      <td>73333.0</td>
+    </tr>
+    <tr>
+      <th>elevation_loss_m</th>
+      <td>1277.0</td>
+      <td>3332.24</td>
+      <td>2974.15</td>
+      <td>45.0</td>
+      <td>1863.00</td>
+      <td>2706.00</td>
+      <td>3955.00</td>
+      <td>50292.0</td>
+    </tr>
+  </tbody>
+</table>
+        </div>
+        <div class="card"><h3>Missing Value Density Map</h3><img src="Charts/missing_value_density.png" alt="Missing Value Density Map"></div><div class="card"><h3>Correlation Matrix</h3><img src="Charts/correlation_heatmap.png" alt="Correlation Matrix"></div><div class="card"><h3>Relationship: elevation_gain_m vs elevation_loss_m (r=0.83)</h3><img src="Charts/top_correlation_scatter.png" alt="Relationship: elevation_gain_m vs elevation_loss_m (r=0.83)"></div><div class="card"><h3>Numeric Metric Distributions</h3><img src="Charts/numeric_distributions.png" alt="Numeric Metric Distributions"></div><div class="card"><h3>Outlier Boxplots (Active Outliers Only)</h3><img src="Charts/outlier_boxplots.png" alt="Outlier Boxplots (Active Outliers Only)"></div><div class="card"><h3>Average distance_km by event_date_dayofweek</h3><img src="Charts/primary_metric_by_category.png" alt="Average distance_km by event_date_dayofweek"></div><div class="card"><h3>Time-Series Trend (distance_km)</h3><img src="Charts/monthly_trend.png" alt="Time-Series Trend (distance_km)"></div>
+    </div>
+</body>
+</html>
